@@ -288,3 +288,73 @@ section:nth-child(even) {
     background-color: red;
     border-color: red;
 }
+
+/* Общие стили для мобильных устройств */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 5%; /* Уменьшить отступы по бокам */
+    }
+
+    header {
+        flex-direction: column; /* Разместить логотип и навигацию вертикально */
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Добавить отступ снизу */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .home {
+        flex-direction: column; /* Вертикальное расположение элементов внутри home */
+        align-items: center;
+        text-align: center; /* Центрировать текст */
+    }
+
+    .home-overlay {
+        margin-right: 0; /* Убрать правый отступ */
+        padding: 20px;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 50vh; /* Увеличить высоту для центрации */
+        margin-top: 20px; /* Добавить отступ сверху */
+    }
+
+    .transparent-button {
+        margin-bottom: 10px; /* Добавить отступ снизу между кнопками */
+        width: 80%; /* Увеличить ширину кнопок */
+    }
+
+    .tarifs-content {
+        flex-direction: column;
+        height: auto; /* Установить автоматическую высоту */
+        padding: 20px 0; /* Добавить отступы сверху и снизу */
+    }
+
+    .footer {
+        flex-direction: column; /* Вертикальное расположение блоков футера */
+        align-items: center; /* Центрировать блоки по горизонтали */
+        text-align: center; /* Центрировать текст */
+    }
+
+    .footer_bockes {
+        flex-direction: column; /* Вертикальное расположение блоков футера */
+        align-items: center; /* Центрировать блоки по горизонтали */
+        text-align: center; /* Центрировать текст */
+        width: 100%;
+        left: 0;
+    }
+
+    .footer div {
+        margin: 10px 0; /* Добавить отступы между блоками */
+    }
+}
