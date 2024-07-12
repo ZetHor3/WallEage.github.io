@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WallEage - лучший софт под CS2</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.min.css">
+</head>
+<body>
+    <div class="smooth-scroll">
+    <header class="container">
+        <div class="logo">
+            <a href="index.html" class="logo-link">WALLEAGE</a>
+            <div class="underline"></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="tariffs.html" class="nav-link" id="products-link">PRODUCTS</a></li>
+                <li><a href="https://t.me/WallEage" class="nav-link" target="_blank">BLOG</a></li>
+                <li><a href="https://t.me/WallEage_Support" class="nav-link" target="_blank">SUPPORT</a></li>
+                <li id="language-selector" class="nav-item">
+                    <a href="#" class="nav-link">🌍 ЯЗЫК</a>
+                    <div id="language-popup" class="language-popup">
+                        <a href="#" class="lang-link" data-lang="ru">RU</a>
+                        <a href="#" class="lang-link" data-lang="en">EN</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main-content container">
+        <section class="button-container">
+                <button class="transparent-button">Вход</button>
+                <button class="transparent-button">Регистрация</button>
+        </section>
+        <div class="home">
+            <div class="players_content"></div>
+            <div class="home-overlay">
+                <h1>Наслаждайся процессом вместе с WallEage</h1>
+                <form action="tariffs.html">
+                    <input class="get-started" type="submit" value="ТАРИФЫ" id="tariffs-button" />
+                </form>
+                <p>Наш продукт является одним из дешёвых на рынке, и безопасным!</p>
+            </div>
+
+        </div>
+        <div class="walleage-text">WallEage</div>
+    </section>
+
+    <section class="tarifs-content container">
+        <div class="tariff" id="tariff3">
+            <h2>Legit WH + AimBot + BHop + TriggerBot</h2>
+            <div id="daysDisplay">15 дней</div>
+            <input type="range" min="1" max="4" value="1" class="slider" id="slider3">
+            <p>Цена: <span id="price3">259 Р</span></p>
+        </div>
+    </section>
+    <footer class="footer container">
+        <div class="footer_bockes">
+            <div class="contacts">
+                <h3>НАШИ КОНТАКТЫ | CONTACTS</h3>
+                <a href="https://vk.com/premium_product_walleage" target="_blank">VK CS2</a>
+                <a href="https://t.me/WallEage" target="_blank">Telegram Channel</a>
+                <a href="https://t.me/WallEage_Support" target="_blank">Telegram Support</a>
+            </div>
+            <div class="payment-methods">
+                <h3>МЫ ПРИНИМАЕМ | WE ACCEPT</h3>
+                <img src="visa.png" alt="Visa">
+                <img src="unionpay.png" alt="UnionPay">
+                <img src="mir.png" alt="Mir">
+                <!-- Add other payment method images as needed -->
+            </div>
+        </div>
+    </footer>
+    <div id="language-popup" class="language-popup">
+        <a href="#" class="lang-link" data-lang="ru">RU</a>
+        <a href="#" class="lang-link" data-lang="en">EN</a>
+    </div>
+
+   </div>
+
+<div class="smooth-scrollbar"></div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    const langLinks = document.querySelectorAll('.lang-link');
+
+    langLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const lang = link.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+
+    function setLanguage(lang) {
+        // Здесь можно установить содержимое страницы на выбранный язык
+        // Например, изменить тексты, атрибуты и т.д.
+        // В этом примере показана только смена класса на HTML-элементе
+        document.documentElement.setAttribute('lang', lang);
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const tarifsContent = document.querySelector('.tarifs-content');
+    
+    document.getElementById('products-link').addEventListener('click', scrollToTariffs);
+    document.getElementById('tariffs-button').addEventListener('click', scrollToTariffs);
+
+    function scrollToTariffs(event) {
+        event.preventDefault();
+        // Получаем координаты элемента
+        const targetPosition = tarifsContent.offsetTop;
+        
+        // Плавная прокрутка
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const tarifsContent = document.querySelector('.tarifs-content');
+    
+    document.getElementById('products-link').addEventListener('click', function(event) {
+        event.preventDefault();
+        // Получаем координаты элемента
+        const targetPosition = tarifsContent.offsetTop;
+        
+        // Плавная прокрутка
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const tariffs = [
+        { sliderId: 'slider3', priceId: 'price3' }
+    ];
+
+    const prices = ["259 Р", "459 Р", "959 Р", "1499 Р"];
+    const daysText = ["15 дней", "30 дней", "90 дней", "180 дней"];
+
+    tariffs.forEach(tariff => {
+        const slider = document.getElementById(tariff.sliderId);
+        const priceDisplay = document.getElementById(tariff.priceId);
+        const daysDisplay = document.getElementById('daysDisplay');
+
+        slider.addEventListener('input', () => {
+            const priceIndex = slider.value - 1;
+            priceDisplay.textContent = prices[priceIndex];
+            daysDisplay.textContent = daysText[priceIndex];
+        });
+    });
+});
+
+
+const smoothCoef = 0.05;
+const smoothScroll = document.querySelector(".smooth-scroll");
+const smoothScrollBar = document.querySelector(".smooth-scrollbar");
+const walleageText = document.querySelector(".walleage-text");
+
+function onResize(e) {
+  smoothScrollBar.style.height = smoothScroll.offsetHeight + "px";
+}
+
+window.addEventListener("resize", onResize);
+onResize();
+
+let prevY = window.scrollY;
+let curY = window.scrollY;
+let y = window.scrollY;
+let dy;
+
+function loop(now) {
+  curY = window.scrollY;
+  dy = curY - prevY;
+  y = Math.abs(dy) < 1 ? curY : y + dy * smoothCoef;
+  prevY = y;
+  smoothScroll.style.transform = `translate3d(0,${-y}px,0)`;
+
+  // Parallax effect for walleage-text
+  const textParallaxCoef = 0.3; // Adjust to control the speed
+  const walleageTextY = y * textParallaxCoef;
+  walleageText.style.transform = `translate3d(-50%, ${-walleageTextY}px, 0)`;
+
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+
+</body>
+</html>
