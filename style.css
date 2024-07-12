@@ -1,0 +1,360 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("../background.png");
+    color: #fff;
+}
+
+
+.container {
+    padding: 0 10%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: #000;
+}
+
+.players_content {
+    width: 300px;
+    height: 450px;
+    background-image: url("../img/players.png");
+    background-size: cover;
+    position: relative;
+    top: 65px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.logo .underline {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0;
+    background-color: red;
+    transition: width 0.8s;
+}
+
+.logo:hover .underline {
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.8s;
+}
+
+nav a:hover {
+    color: red;
+}
+
+.main-content {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 10px;
+    margin-right: 300px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.get-started {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #000;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Flexbox centering for .tarifs-content */
+.tarifs-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Full viewport height */
+    background-image: url("../img/tarifs-bg.png");
+    background-size: cover;
+}
+
+.tariff {
+    text-align: center; /* Center text inside the div */
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: Add background for better visibility */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.slider {
+    width: 100%;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.content {
+    flex: 1;
+    
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: #1c1c1c;
+
+}
+
+.footer div {
+    margin: 0 20px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer .contacts, .footer .forum-stats, .footer .online-stats, .footer .payment-methods {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .payment-methods img {
+    margin: 5px 0;
+    width: 50px;
+}
+.footer_bockes{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 10%;
+}
+.payment-methods{
+    float: right;
+}
+
+/* Стили для попапа языка */
+.language-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.language-popup.show {
+    display: block;
+}
+
+.language-popup a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+.language-popup a:hover {
+    background-color: #555;
+}
+.smooth-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.smooth-scroll > section {
+  font-size: 2rem;
+  padding: 15px;
+}
+
+
+.smooth-scrollbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+}
+
+section {
+  background-image: url("../background.png");
+}
+
+section:nth-child(even) {
+  background-image: url("../background.png");
+}
+.walleage-text {
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 74px; /* Adjust as needed */
+    color: #fff; /* Adjust as needed */
+    z-index: 10;
+    font-family: 'Capitellum Tough';
+}
+
+@font-face {
+    font-family: 'Capitellum Tough';
+    src: url('../fonts/Capitellum Tough.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.transparent-button {
+    background-color: transparent;
+    border: 4px solid red;
+    color: #fff; /* Цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px; /* Размер текста */
+    cursor: pointer; /* Изменение вида курсора при наведении */
+    margin-right: 10px; /* Отступ между кнопками, при необходимости */
+
+}
+
+.transparent-button:hover {
+    background-color: red;
+    border-color: red;
+}
+
+/* Общие стили для мобильных устройств */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 5%; /* Уменьшить отступы по бокам */
+    }
+
+    header {
+        flex-direction: column; /* Разместить логотип и навигацию вертикально */
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Добавить отступ снизу */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .home {
+        flex-direction: column; /* Вертикальное расположение элементов внутри home */
+        align-items: center;
+        text-align: center; /* Центрировать текст */
+    }
+
+    .home-overlay {
+        margin-right: 0; /* Убрать правый отступ */
+        padding: 20px;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 50vh; /* Увеличить высоту для центрации */
+        margin-top: 20px; /* Добавить отступ сверху */
+    }
+
+    .transparent-button {
+        margin-bottom: 10px; /* Добавить отступ снизу между кнопками */
+        width: 80%; /* Увеличить ширину кнопок */
+    }
+
+    .tarifs-content {
+        flex-direction: column;
+        height: auto; /* Установить автоматическую высоту */
+        padding: 20px 0; /* Добавить отступы сверху и снизу */
+    }
+
+    .footer {
+        flex-direction: column; /* Вертикальное расположение блоков футера */
+        align-items: center; /* Центрировать блоки по горизонтали */
+        text-align: center; /* Центрировать текст */
+    }
+
+    .footer_bockes {
+        flex-direction: column; /* Вертикальное расположение блоков футера */
+        align-items: center; /* Центрировать блоки по горизонтали */
+        text-align: center; /* Центрировать текст */
+        width: 100%;
+        left: 0;
+    }
+
+    .footer div {
+        margin: 10px 0; /* Добавить отступы между блоками */
+    }
+}
